@@ -22,7 +22,7 @@ fn build_list_of_student(filepath: &str) -> Vec<(String, i32)> {
     };
         let reader = BufReader::new(file);
         let mut complete_list = Vec::new();
-        for line in reader.lines(){
+        for line in reader.lines().skip(1){
             let line = line.unwrap();
             let parts: Vec<&str> = line.split(',').collect();
             let name = parts[0].to_string();
@@ -81,7 +81,7 @@ fn build_list_of_student(filepath: &str) -> Vec<(String, i32)> {
         let average = average_4_all_students(&list_of_students);
         let highscore = highscore(&list_of_students);
         let worst_score = worst_score(&list_of_students);
-        format!("the average of the class is {}\nThe best in the class is {}\nThe worst in the class is {}",
+        println!("the average of the class is {}\nThe best in the class is {}\nThe worst in the class is {}",
                 average,
                 highscore,
                 worst_score);
