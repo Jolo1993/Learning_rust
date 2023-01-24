@@ -1,5 +1,5 @@
 [package]
-name = "STUDENT_CSV"
+name = "student_csv"
 version = "0.1.0"
 edition = "2021"
 

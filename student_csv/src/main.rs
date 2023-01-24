@@ -47,7 +47,7 @@ fn build_list_of_student(filepath: &str) -> Vec<(String, i32)> {
         }
         return average / list.len() as i32;
     }
-    fn highscore(list: &Vec<(String, i32)>) -> Student {
+    fn high_score(list: &Vec<(String, i32)>) -> Student {
         let mut hs: i32 = i32::MIN;
         let mut name = String::new();
         for (mut _i, (first, second)) in list.iter().enumerate() {
@@ -76,14 +76,14 @@ fn build_list_of_student(filepath: &str) -> Vec<(String, i32)> {
     }
 
     fn main() {
-        let file: &str = "C:\\Users\\Jotl\\CLionProjects\\Learning_rust\\STUDENTS_CSV\\studentList";
+        let file: &str = "C:\\Users\\Jotl\\CLionProjects\\Learning_rust\\student_csv\\studentList";
         let list_of_students = build_list_of_student(&file);
         let average = average_4_all_students(&list_of_students);
-        let highscore = highscore(&list_of_students);
+        let hs = high_score(&list_of_students);
         let worst_score = worst_score(&list_of_students);
         println!("the average of the class is {}\nThe best in the class is {}\nThe worst in the class is {}",
                 average,
-                highscore,
+                hs,
                 worst_score);
     }
 
