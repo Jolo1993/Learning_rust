@@ -39,20 +39,20 @@ fn build_list_of_student(filepath: &str) -> Vec<(String, i32)> {
 
 }
     fn average_4_all_students(list: &Vec<(String, i32)>) -> i32 {
-        let mut i: i32 = 0;
+        let mut _i: i32 = 0;
         let mut average: i32 = 0;
         for students in list.iter() {
             average += students.1;
-            i += 1;
+            _i += 1;
         }
         return average / list.len() as i32;
     }
     fn highscore(list: &Vec<(String, i32)>) -> Student {
         let mut hs: i32 = i32::MIN;
         let mut name = String::new();
-        for (mut i, (first, second)) in list.iter().enumerate() {
+        for (mut _i, (first, second)) in list.iter().enumerate() {
             if hs >= *second {
-                i += 1;
+                _i += 1;
             } else {
                 hs = *second;
                 name = String::from(&*first);
@@ -63,9 +63,9 @@ fn build_list_of_student(filepath: &str) -> Vec<(String, i32)> {
     fn worst_score(list: &Vec<(String, i32)>) -> Student{
         let mut ws: i32 = i32::MAX;
         let mut name = String::new();
-        for (mut i, (first, second)) in list.iter().enumerate() {
+        for (mut _i, (first, second)) in list.iter().enumerate() {
             if ws <= *second {
-                i += 1;
+                _i += 1;
             } else {
                 ws = *second;
                 name = String::from(&*first);
